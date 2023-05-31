@@ -1,6 +1,7 @@
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Layout } from "./components/Layout";
 import { TransactionItem } from "./pages/transaction";
+import { Dashboard } from "./pages/dashboard";
 
 const router = createBrowserRouter([
   {
@@ -11,6 +12,10 @@ const router = createBrowserRouter([
       </Layout>
     ),
     children: [
+      {
+        path: "dashboard",
+        element: <Dashboard />,
+      },
       {
         path: "transactions",
         element: <TransactionItem />,

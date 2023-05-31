@@ -4,6 +4,7 @@ import {
   Card,
   CardBody,
   CardHeader,
+  Center,
   Divider,
   Flex,
   Stack,
@@ -106,18 +107,23 @@ export const TransactionItem = (props: Props) => {
                 </Badge>
               </Box>
               <Box flex="1">
-                <Text>{i.account.name}</Text>
+                <Text noOfLines={1}>{i.note}</Text>
+                <Text fontSize="xs" noOfLines={1}>
+                  {i.account.name}
+                </Text>
               </Box>
               <Box flex="1">
-                {i.type === "income" ? (
-                  <Text color="green.400">
-                    {numeral(i.amount).format("0,0")}đ
-                  </Text>
-                ) : (
-                  <Text color="red.400">
-                    {numeral(i.amount).format("0,0")}đ
-                  </Text>
-                )}
+                <Flex justifyContent="flex-end">
+                  {i.type === "income" ? (
+                    <Text color="green.400">
+                      {numeral(i.amount).format("0,0")}đ
+                    </Text>
+                  ) : (
+                    <Text color="red.400">
+                      {numeral(i.amount).format("0,0")}đ
+                    </Text>
+                  )}
+                </Flex>
               </Box>
             </Flex>
           ))}

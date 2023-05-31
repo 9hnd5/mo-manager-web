@@ -19,7 +19,7 @@ import {
   Text,
   VStack,
   useColorModeValue,
-  useDisclosure
+  useDisclosure,
 } from "@chakra-ui/react";
 import { ReactNode } from "react";
 import { IconType } from "react-icons";
@@ -33,18 +33,15 @@ import {
   FiStar,
   FiTrendingUp,
 } from "react-icons/fi";
-import {
-  NavLink as RouterLink,
-  useMatch
-} from "react-router-dom";
+import { NavLink as RouterLink, useMatch } from "react-router-dom";
 
 interface LinkItemProps {
   name: string;
   icon: IconType;
 }
 const LinkItems: Array<LinkItemProps> = [
+  { name: "Dashboard", icon: FiTrendingUp },
   { name: "Transactions", icon: FiHome },
-  { name: "Trending", icon: FiTrendingUp },
   { name: "Explore", icon: FiCompass },
   { name: "Favourites", icon: FiStar },
   { name: "Settings", icon: FiSettings },

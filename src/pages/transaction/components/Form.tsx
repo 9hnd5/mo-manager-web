@@ -39,6 +39,7 @@ import { Account, Category } from "../type";
 import { CategoryForm } from "./CategoryForm";
 import { GET_TRANSACTIONS } from "./List";
 import { AccountForm } from "./AccountForm";
+import { GET_FEE_REPORT } from "../../dashboard";
 
 const CREATE_TRANSACTION_ITEM: TypedDocumentNode<any, { input: any }> = gql(`
   mutation CreateTransactionItem($input: CreateTransactionItemInput!) {
@@ -94,21 +95,21 @@ export const TransactionForm = () => {
   const [createTransItem, { loading: isCreating }] = useMutation(
     CREATE_TRANSACTION_ITEM,
     {
-      refetchQueries: [GET_TRANSACTIONS],
+      refetchQueries: [GET_TRANSACTIONS, GET_FEE_REPORT],
     }
   );
 
   const [updateTransItem, { loading: isUpdating }] = useMutation(
     UPDATE_TRANSACTION_ITEM,
     {
-      refetchQueries: [GET_TRANSACTIONS],
+      refetchQueries: [GET_TRANSACTIONS, GET_FEE_REPORT],
     }
   );
 
   const [deleteTransItem, { loading: isDeleting }] = useMutation(
     DELETE_TRANSACTION_ITEM,
     {
-      refetchQueries: [GET_TRANSACTIONS],
+      refetchQueries: [GET_TRANSACTIONS, GET_FEE_REPORT],
     }
   );
 
