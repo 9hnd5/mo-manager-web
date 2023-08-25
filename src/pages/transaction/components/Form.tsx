@@ -37,7 +37,7 @@ import {
 import { useTransactionStore } from "../store";
 import { Account, Category } from "../type";
 import { CategoryForm } from "./CategoryForm";
-import { GET_TRANSACTIONS } from "./List";
+import { GET_TRANSACTIONS } from "./DailyTransactionList";
 import { AccountForm } from "./AccountForm";
 import { GET_FEE_REPORT } from "../../dashboard";
 

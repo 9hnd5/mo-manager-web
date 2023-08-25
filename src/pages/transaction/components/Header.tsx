@@ -13,11 +13,11 @@ export const Header = (props: Props) => {
         <Flex justifyContent="space-between">
           <Box>
             <Text>Income</Text>
-            <Text color="green.400">{numeral(income).format("0,0")}đ</Text>
+            <Text color="green.500">{numeral(income).format("0,0")}đ</Text>
           </Box>
           <Box>
             <Text>Expense</Text>
-            <Text color="red.400">{numeral(expense).format("0,0")}đ</Text>
+            <Text color="red.500">{numeral(expense).format("0,0")}đ</Text>
           </Box>
           <Box>
             <Text>Total</Text>

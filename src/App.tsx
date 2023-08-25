@@ -2,7 +2,7 @@ import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Layout } from "./components/Layout";
 import { TransactionItem } from "./pages/transaction";
 import { Dashboard } from "./pages/dashboard";
-
+import "./App.css";
 const router = createBrowserRouter([
   {
     path: "/",

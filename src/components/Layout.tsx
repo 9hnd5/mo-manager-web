@@ -71,6 +71,7 @@ export const Layout = (props: LayoutProps) => {
           <SidebarContent onClose={onClose} />
         </DrawerContent>
       </Drawer>
+
       <MobileNav onOpen={onOpen} />
       <Box ml={{ base: 0, md: 60 }} p="4">
         {children}

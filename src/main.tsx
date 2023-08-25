@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
+import { extendTheme } from "@chakra-ui/react";
 import {
   ApolloClient,
   InMemoryCache,
@@ -57,10 +58,19 @@ const client = new ApolloClient({
   link: from([errorLink, httpLink]),
   cache: new InMemoryCache({ addTypename: false }),
 });
+const theme = extendTheme({
+  styles: {
+    global: {
+      body: {
+        fontSize: ["10px", "16px"],
+      },
+    },
+  },
+});
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <ChakraProvider>
+      <ChakraProvider theme={theme}>
         <App />
         <ToastContainer />
       </ChakraProvider>
